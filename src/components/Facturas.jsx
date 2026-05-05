@@ -274,7 +274,7 @@ export default function Facturas({ agregarFactura }) {
     <Card className="shadow-sm mb-4 border-0">
       <Card.Header className="bg-primary text-white d-flex align-items-center py-3">
         <FaFileInvoice className="me-2 fs-5" />
-        <h5 className="mb-0 fw-bold">Procesar Nueva Factura</h5>
+        <h5 className="mb-0 fw-bold">Procesar Factura</h5>
       </Card.Header>
       
       <Card.Body className="p-4">
@@ -341,8 +341,8 @@ export default function Facturas({ agregarFactura }) {
 
           <h6 className="text-primary border-bottom pb-2 mb-3 mt-4 fw-bold">3. Importes Finales</h6>
           <Row className="mb-4 align-items-end">
-            <Col md={3} className="mb-3 mb-md-0"><Form.Group><Form.Label className="small text-muted fw-bold d-block">Neto Gravado OCR ($)<span className={`float-end mt-1 mb-1 badge bg-${Math.abs(totalCalculadoItems - parseFloat(watchNeto || 0)) < 1 ? 'success' : 'danger'}`}>Suma Ítems: ${totalCalculadoItems.toFixed(2)}</span></Form.Label><Form.Control type="number" step="0.01" {...register("cabecera.neto")} /></Form.Group></Col>
-            <Col md={3} className="mb-3 mb-md-0"><Form.Group><Form.Label className="small text-muted fw-bold mb-md-4">Monto IVA ($)</Form.Label><Form.Control type="number" step="0.01" {...register("cabecera.iva")} /></Form.Group></Col>
+            <Col md={3} className="mb-3 mb-md-0"><Form.Group><Form.Label className="small text-muted fw-bold d-block">Neto($)<span className={`float-end mt-1 mb-1 badge bg-${Math.abs(totalCalculadoItems - parseFloat(watchNeto || 0)) < 1 ? 'success' : 'danger'}`}>Suma Ítems: ${totalCalculadoItems.toFixed(2)}</span></Form.Label><Form.Control type="number" step="0.01" {...register("cabecera.neto")} /></Form.Group></Col>
+            <Col md={3} className="mb-3 mb-md-0"><Form.Group><Form.Label className="small text-muted fw-bold mb-md-4">IVA ($)</Form.Label><Form.Control type="number" step="0.01" {...register("cabecera.iva")} /></Form.Group></Col>
             <Col md={3} className="mb-3 mb-md-0"><Form.Group><Form.Label className="small text-muted fw-bold mb-md-4">Alícuotas IVA (%)</Form.Label><Form.Control type="text" placeholder="Ej: 21% - 10.5%" {...register("cabecera.alicuotasIva")} /></Form.Group></Col>
             <Col md={3} className="mb-3 mb-md-0"><Form.Group><Form.Label className="small text-primary fw-bold mb-md-4">Total Factura ($)</Form.Label><Form.Control type="number" step="0.01" className="bg-primary text-white font-weight-bold" {...register("cabecera.total", { required: true })} isInvalid={!!errors.cabecera?.total} /></Form.Group></Col>
           </Row>
